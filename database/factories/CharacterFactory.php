@@ -13,15 +13,18 @@ class CharacterFactory extends Factory
 
     public function definition()
     {
-        return [
+        try {
+            return [
 
-            'name' => $this->faker->name,
-            'role' => 'freelancer, warrior, magician, healer, vanguard',
-            'server name' => 'beta',
-            'char_level' => 1,
-            'exp amount' => 0,
-            'logged in at' => now(),
+                'name' => $this->faker->name,
+                'role' => 'freelancer, warrior, magician, healer, vanguard, defender, bishop',
+                'server name' => 'beta',
+                'char_level' => random_int(1, 50),
+                'exp amount' => random_int(0, 100000),
+                'logged in at' => now(),
 
-        ];
+            ];
+        } catch (\Exception $e) {
+        }
     }
 }
