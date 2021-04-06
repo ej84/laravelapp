@@ -13,6 +13,10 @@ class Page extends Model
         'title', 'body', 'published', 'user_id'
     ];
 
+    public static function where(string $string, $id)
+    {
+    }
+
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
